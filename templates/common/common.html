@@ -1,0 +1,36 @@
+<html>
+	<title>Loaded Document</title>
+	<head></head>
+	<body>
+		<script id="getQuoteTabletHeader">
+			<h1 class="landingTitle"><%=name %></h1>
+		</script>
+		
+		<script id="dummy">
+			<%if(back != 'n'){%>
+			<a  data-icon="back" data-theme="b" class="goback" href="<%=back %>" >Back</a>
+			<%}%>
+			<div id="logged_username" class="tablet_right_header">
+			<%if(status == 'Logout') {%>
+			Hi <%= username %>
+			<%}%>
+			</div>
+		</script>
+		
+		<script id="getMobileHeader">
+			<%if(type == 'mobile'){%>alert(<%= name %>)
+				<h1 class="landingTitle"><%= name %></h1>
+			<%}else{%>
+				<h1 class="landingTitle tablet_right_img"><img src=<%= name %>></img> </h1>
+			<%}%>
+		</script>
+		<script id="appFooter">
+			<hr />
+			<div class="row-fluid">
+			<div class="span12">
+				<div>Made by Sreekanth Reddy (<a href="http://twitter.com/srikanth_yarram">@srikanth_yarram</a>)</div>
+			</div>
+			</div>
+		</script>
+	</body>
+</html>

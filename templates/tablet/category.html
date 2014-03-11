@@ -1,0 +1,117 @@
+<script></script>
+
+<script id="tabletWrapper">
+	<div class="iPad-container"></div>
+</script>
+			
+<script type="text/template" id="categoriesPage">
+	<div id="categoryContent">
+		<h2 style="padding:10px 5px">Select a Category Below:</h2>
+		<ul data-role="listview" data-inset="true">
+			<li>Acura</li>
+			<li>Audi</li>
+			<li>BMW</li>
+			<li>Cadillac</li>
+			<li>Ferrari</li>
+			<li>Acura</li>
+			<li>Audi</li>
+			<li>BMW</li>
+			<li>Cadillac</li>
+			<li>Ferrari</li>
+			<li>Acura</li>
+			<li>Audi</li>
+			<li>BMW</li>
+			<li>Cadillac</li>
+			<li>Ferrari</li>
+			<li>Acura</li>
+			<li>Audi</li>
+			<li>BMW</li>
+			<li>Cadillac</li>
+			<li>Ferrari</li>
+			<li>Acura</li>
+			<li>Audi</li>
+			<li>BMW</li>
+			<li>Cadillac</li>
+			<li>Ferrari</li>
+			<li>Acura</li>
+			<li>Audi</li>
+			<li>BMW</li>
+			<li>Cadillac</li>
+			<li>Ferrari</li>
+			<li>Acura</li>
+			<li>Audi</li>
+			<li>BMW</li>
+			<li>Cadillac</li>
+			<li>Ferrari</li>
+			<li>Acura</li>
+			<li>Audi</li>
+			<li>BMW</li>
+			<li>Cadillac</li>
+			<li>Ferrari</li>
+		</ul>
+	</div>
+</script>
+
+<script id="tabletB">
+	<ul data-role="listview" data-inset="true">
+	  <li><a href="#category?animals" class="animals">Animals</a></li>
+	  <li><a href="#category?colors" class="colors">Colors</a></li>
+	  <li><a href="#category?vehicles" class="vehicles">Vehicles</a></li>
+	  <li><a href="#category?animals" class="animals">Animals</a></li>
+	  <li><a href="#category?colors" class="colors">Colors</a></li>
+	  <li><a href="#category?vehicles" class="vehicles">Vehicles</a></li>
+	  <li><a href="#category?animals" class="animals">Animals</a></li>
+	  <li><a href="#category?colors" class="colors">Colors</a></li>
+	  <li><a href="#category?vehicles" class="vehicles">Vehicles</a></li>
+	  <li><a href="#category?animals" class="animals">Animals</a></li>
+	  <li><a href="#category?colors" class="colors">Colors</a></li>
+	  <li><a href="#category?vehicles" class="vehicles">Vehicles</a></li>
+	</ul>
+
+</script>
+
+<script type="text/template" id="animalsPage">
+	<div id="animals" data-role="page" data-title="Animals">
+		  <div data-role="header">
+			<h1>Animals</h1>
+		  </div><!-- /header -->
+		  <div role="main" class="ui-content">
+				<ul data-role="listview" data-inset="true"></ul>
+		  </div><!-- /content -->
+	</div>
+</script>
+
+<script type="text/template" id="colorsPage">
+	<div id="colors" data-role="page" data-title="Colors">
+		  <div data-role="header">
+			<h1>Colors</h1>
+		  </div><!-- /header -->
+		  <div role="main" class="ui-content">
+			<ul data-role="listview" data-inset="true"></ul>
+		  </div><!-- /content -->
+	</div>
+</script>
+
+<script type="text/template" id="vehiclesPage">
+	<div id="vehicles" data-role="page" data-title="Vehicles">
+		  <div data-role="header">
+			<h1>Vehicles</h1>
+		  </div><!-- /header -->
+		  <div role="main" class="ui-content">
+			<ul data-role="listview" data-inset="true"></ul>
+		  </div><!-- /content -->
+	</div>
+</script>
+
+<!-- Underscore Template that is used to display all of the Category Models -->
+<script id="categoryItems" type="text/template">
+
+      <% _.each( collection.toJSON(), function( category, id ) { %>
+
+            <li class="ui-li-static">
+                  <%= category.type %>
+            </li>
+
+      <% }); %>
+
+</script>

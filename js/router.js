@@ -1,32 +1,27 @@
 (function(){
 
 var getDevice = function(){
-		var _userAgent = window.navigator.userAgent.toLowerCase(); 
-		var _isTabletMatch = window.navigator.userAgent.toLowerCase().match(/ipad|android|playbook/);
-		var _deviceOS = _userAgent.match(/iphone|ipad|android|blackberry|playbook/);
-		var devOS, _isTablet = false;	   	
+	var _userAgent = window.navigator.userAgent.toLowerCase(); 
+	var _isTabletMatch = window.navigator.userAgent.toLowerCase().match(/ipad|android|playbook/);
+	var _deviceOS = _userAgent.match(/iphone|ipad|android|blackberry|playbook/);
+	var devOS, _isTablet = false;	   	
 
-		if(_deviceOS != null){
-
-			devOS = _deviceOS[0];
-		}else{
-
-			devOS = 'desktop';
+	if(_deviceOS != null){
+		devOS = _deviceOS[0];
+	}else{
+		devOS = 'desktop';
+	}
+	
+	if(_isTabletMatch != null){
+		if(_isTabletMatch[0] == 'ipad' || _isTabletMatch[0] == 'playbook'){
+			_isTablet = true;
+		}else if(_isTabletMatch[0] == 'android' && _userAgent.match(/mobile/) == null){
+			_isTablet = true;
 		}
+	}
 		
-		if(_isTabletMatch != null){
-
-			if(_isTabletMatch[0] == 'ipad' || _isTabletMatch[0] == 'playbook'){
-				_isTablet = true;
-
-			}else if(_isTabletMatch[0] == 'android' && _userAgent.match(/mobile/) == null){
-				_isTablet = true;
-
-			}
-		}
-		
-		this.isTablet = _isTablet;
-		this.deviceOs = devOS;		
+        	this.isTablet = _isTablet;
+	        this.deviceOs = devOS;		
 	}
 
 	var _deviceObject = new getDevice();
@@ -49,11 +44,11 @@ require.config({
 		
 		commonTemplates:'../templates/common',
 		appTemplates: '../templates/'+_templateLocation,
-    	commonWid:'widgets/common',
-    	appWidgets: "widgets/"+_templateLocation,
-    	VIRTUSA:'widgets/common/common',
-    	commonView:'widgets/common/commonView',
-    	baseView: "widgets/common/"+_templateLocation+"_baseView"
+    		commonWid:'widgets/common',
+    		appWidgets: "widgets/"+_templateLocation,
+    		COMMMON:'widgets/common/common',
+    		commonView:'widgets/common/commonView',
+    		baseView: "widgets/common/"+_templateLocation+"_baseView"
 	},
 	
 	shim: {
